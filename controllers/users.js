@@ -34,14 +34,7 @@ module.exports.login = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = makeToken({ _id: user._id });
-      //      console.log(token);
       res
-        // .cookie('jwt', token, {
-        //   httpOnly: true,
-        //   maxAge: 3600000 * 24 * 7,
-        //   sameSite: 'None',
-        //   secure: true,
-        // })
         .status(200).send({ token });
     })
     .catch(next);

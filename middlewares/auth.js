@@ -12,8 +12,6 @@ module.exports.checkToken = function checkToken(req, res, next) {
   if (!authorization || !authorization.startsWith('Bearer ')) throw new AuthError('Ошибка авторизации');
   const token = authorization.replace('Bearer ', '');
 
-  //  const token = req.cookies.jwt;
-  //  console.log('checkToken', req.cookies, token);
   let payload;
   try {
     payload = jwt.verify(token, SECRET);

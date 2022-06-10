@@ -10,10 +10,8 @@ module.exports.handleCors = function handleCors(req, res, next) {
   const requestHeaders = req.headers['access-control-request-headers'];
 
   res.header('Access-Control-Allow-Credentials', true);
-  //  console.log(origin);
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
-    //    console.log('origin allowed');
   }
 
   if (method === 'OPTIONS') {

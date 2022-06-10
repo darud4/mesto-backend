@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors, celebrate } = require('celebrate');
-// const cookieParser = require('cookie-parser');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
@@ -17,15 +16,9 @@ const PORT = 3000;
 const app = express();
 
 app.use(handleCors);
-// app.use(cookieParser());
 app.use(bodyParser.json({ extended: true }));
 
 app.use(requestLogger);
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
 app.post('/signin', celebrate(loginValidation), login);
 app.post('/signup', celebrate(createUserValidation), createUser);
 
