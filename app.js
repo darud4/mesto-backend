@@ -11,8 +11,8 @@ const { errorHandler } = require('./utils/errorHandler');
 const { checkToken } = require('./middlewares/auth');
 const { handleCors } = require('./middlewares/cors');
 const NotFound = require('./errors/NotFound');
+const { PORT } = require('./config');
 
-const PORT = 3000;
 const app = express();
 
 app.use(handleCors);
