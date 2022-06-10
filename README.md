@@ -1,28 +1,24 @@
-[![Tests for sprint 13](https://github.com/darud4/express-mesto-gha/actions/workflows/tests-13-sprint.yml/badge.svg)](https://github.com/darud4/express-mesto-gha/actions/workflows/tests-13-sprint.yml) [![Tests for sprint 14](https://github.com/darud4/express-mesto-gha/actions/workflows/tests-14-sprint.yml/badge.svg)](https://github.com/darud4/express-mesto-gha/actions/workflows/tests-14-sprint.yml)
-# Проект Mesto фронтенд + бэкенд
+# Проект Mesto 
 
+## Что это?
 
+Это бекенд веб-приложения Mesto.
+стек: Node.js + express + mongoDB + celebrate + winston
 
-## Настройка бейджей статуса тестов
-Перед началом работы над проектом рекомендуется исправить бейджи, отражающие статус прохождения тестов.
-Для этого замените разметку бейджей на следующий фрагмент, подставив вместо `${имя_пользователя}` и `${имя_репозитория}` соответствующие значения.
+## Что такое проект Mesto?
 
-```
-[![Tests for sprint 13](https://github.com/${имя_пользователя}/${имя репозитория}/actions/workflows/tests-13-sprint.yml/badge.svg)](https://github.com/${имя_пользователя}/${имя репозитория}/actions/workflows/tests-13-sprint.yml) 
+Это веб-приложение, позволяющее посетителям 
+- зарегистрировать аккаунт
+- разместить карточки с произвольными фото 
+- просмотреть ленту карточек, размещенных другими пользователями
+- ставить лайки карточкам
 
-[![Tests for sprint 14](https://github.com/${имя_пользователя}/${имя репозитория}/actions/workflows/tests-14-sprint.yml/badge.svg)](https://github.com/${имя_пользователя}/${имя репозитория}/actions/workflows/tests-14-sprint.yml)
-```
+## Как это установить?
 
+Для работы бекенду необходим node.js и mongoDB версии 4.
 
-## Директории
+- Клонируйте себе репозиторий
+- Войдите в папку проекта и выполните команду "npm i", чтобы установить все необходимые модули
+- Выполните команду npm start, чтобы запустить сервер. 
 
-`/routes` — папка с файлами роутера  
-`/controllers` — папка с файлами контроллеров пользователя и карточки   
-`/models` — папка с файлами описания схем пользователя и карточки  
-  
-Остальные директории вспомогательные, создаются при необходимости разработчиком
-
-## Запуск проекта
-
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload
+По умолчанию проект слушает порт 3000, для того, чтобы изменить это, поменяйте номер порта в файле /config/port.js
