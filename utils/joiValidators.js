@@ -1,6 +1,10 @@
 const { Joi } = require('celebrate');
+const validator = require('validator');
 
-const urlPattern = /^https?:\/\/(www\.)?[a-z0-9.-]+\.[a-z]+(\/[a-z-]+)*?(\/[a-z0-9\-._~:/?#[\]@!$&'()*+,;=]+)?[/#]?$/i;
+const validateUrl = (value) => {
+  if (!validator.isURL(value, { require_protocol: true })) throw new Error('Неправильный формат ссылки');
+  return value;
+};
 
 module.exports.createUserValidation = {
   body: Joi.object().keys({
@@ -8,7 +12,7 @@ module.exports.createUserValidation = {
     password: Joi.string().required(),
     name: Joi.string().min(2).max(30),
     about: Joi.string().min(2).max(30),
-    avatar: Joi.string().regex(urlPattern),
+    avatar: Joi.string().custom(validateUrl),
   }),
 };
 
@@ -28,7 +32,7 @@ module.exports.idValidation = {
 
 module.exports.changeAvatarValidation = {
   body: Joi.object().keys({
-    avatar: Joi.string().required().regex(urlPattern),
+    avatar: Joi.string().required().custom(validateUrl),
   }),
 };
 
@@ -42,6 +46,6 @@ module.exports.updateProfileValidation = {
 module.exports.createCardValidation = {
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
-    link: Joi.string().required().regex(urlPattern),
+    link: Joi.string().required().custom(validateUrl),
   }),
 };
