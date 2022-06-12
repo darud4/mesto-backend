@@ -1,7 +1,6 @@
 node_modules
 ./deploy.bat
-./error.log
-./request.log
+*.log
 
 
 
