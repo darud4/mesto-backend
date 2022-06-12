@@ -1,4 +1,4 @@
-name: Tests 14 sprint
+name: Backend autotests
 
 on:
   push:
