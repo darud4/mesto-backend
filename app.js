@@ -2,15 +2,23 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { errorHandler } = require('./utils/errorHandler');
-const { handleCors } = require('./middlewares/cors');
 const { PORT } = require('./config');
 const router = require('./routes/index');
 
+const CORS_CONFIG = {
+  credentials: true,
+  origin: [
+    'http://darud4-pr15.nomoredomains.xyz',
+    'http://darud4-pr15.nomoredomains.xyz',
+  ],
+};
+
 const app = express();
 
-app.use(handleCors);
+app.use(cors(CORS_CONFIG));
 app.use(bodyParser.json({ extended: true }));
 
 app.use(requestLogger);
