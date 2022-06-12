@@ -7,8 +7,7 @@
     "lint": "npx eslint .",
     "lint-fix": "npx eslint . --fix",
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "deploy": "scp -r ./* darud4@51.250.102.12:~/backend"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
