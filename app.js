@@ -12,8 +12,7 @@ const CORS_CONFIG = {
   credentials: true,
   origin: [
     'http://darud4-pr15.nomoredomains.xyz',
-    'http://darud4-pr15.nomoredomains.xyz',
-  ],
+],
 };
 
 const app = express();
