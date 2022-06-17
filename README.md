@@ -2,7 +2,9 @@
 
 ## Что это?
 
-Это бекенд веб-приложения Mesto. Фронтенд веб-приложения [находится здесь](https://github.com/darud4/mesto-backend)
+Это бекенд веб-приложения Mesto. 
+Фронтенд веб-приложения [находится здесь](https://github.com/darud4/mesto-backend)
+
 стек: Node.js + express + mongoDB + celebrate + winston
 
 ## Что такое проект Mesto?
